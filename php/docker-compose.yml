@@ -1,13 +1,7 @@
-version: '3.8'
-
-networks:
-  backend:
-    driver: bridge
-
 services:
 
   recruit:
-    container_name: recruit
+    container_name: recruit_php
     image: recruit/php
     build:
       context: .
@@ -15,8 +9,6 @@ services:
     volumes:
       - .:/srv:cached
     tty: true
-    networks:
-      - backend
     deploy:
       resources:
         limits:
